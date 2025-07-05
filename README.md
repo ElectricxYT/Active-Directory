@@ -16,8 +16,7 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 - Installing Server Manager
 - Setting a Static IP Adress
 - Verifying that DNS is working
-- Testing Domain Join 
-- Setting Up Active Directory
+- Setting Up Active Directory Domain Services (AD DS)
 - Create, Disable, and Delete User Accounts
 - Create Security Groups and Add Users
 - Organizing with Organizational Units (OUs)
@@ -93,6 +92,31 @@ I then clicked **Apply** and **OK.**
 
 
 ---
-## Skill 4
+## Verifying that DNS is working
 
+1. To verify that DNS is working, all I had to do was examine the results of me **pinging google.com** from inside of the VM. Because I received replies from google.com with an IPv6 address, I can conclude that DNS works. 
 
+![ActiveDirectoryDNS](https://github.com/user-attachments/assets/98910f9d-cc2a-4655-bd2c-ac6eecdffa40)
+(Output of the command *ping google.com*)
+
+---
+## Setting Up Active Directory Domain Services (AD DS)
+
+1. I first selected the **AD DS** tab on the left of **Server Manager.** I then clicked **Promote this server to a domain,** thus opening the configuration wizard.
+2. Next, at the **Deployment Configuration** tab, I selected **Add a new forest** and made the root domain name **Electricx.local**
+![ActiveDirectory9](https://github.com/user-attachments/assets/5dfa2db5-7438-46e4-ac5f-c5fbc8d1c4fe)
+   (The AD DS Configuration Wizard)
+
+3. Then, at the **Domain Controller Options** tab, I set the **Forest functional level** and the **Domain functional level** to Windows Server 2016 and checked the **Domain Name System (DNS) Server** box. I then typed in the **Directory Services Restore Mode (DSRM) password.**
+![ActiveDirectory10](https://github.com/user-attachments/assets/c9b51153-1672-40a2-b897-9ec3c94c5b0c)
+   (The Domain Controller Options tab)
+
+4. I then proceeded to the **Prerequisites Check** tab and waited for the prerequisite checks to pass successfully and then clicked **Install.**
+![ActiveDirectory11](https://github.com/user-attachments/assets/02d946ad-313b-455c-8131-f11d546e5a19)
+   (Installing AD DS)
+
+5. My system then automatically restarted, and upon re-entering my password and going back to the AD DS tab, I saw that AD DS has been installed for my domain.
+![ActiveDirectory12](https://github.com/user-attachments/assets/b7bd2225-4cf0-4252-8683-69586e27cae5)
+   (My username being changed to ELECTRICX (my domain)\Administrator (my previous username))
+![ActiveDirectory13](https://github.com/user-attachments/assets/76edb267-1aa4-4b29-aa0b-d80f1061240a)
+   (AD DS all setup)
