@@ -18,7 +18,8 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 - Verifying that DNS is working
 - Setting Up Active Directory Domain Services (AD DS)
 - Create, Disable, and Delete User Accounts
-- Create Security Groups and Add Users
+- **⬇️ In Progress ⬇️**
+- Create Security Groups and Add Users 
 - Organizing with Organizational Units (OUs)
 - Using Group Policy Objects (GPO)
 - Setting Permissions on Shared Folders
@@ -40,6 +41,8 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 ## Steps
 
 ## Installing Windows Server 2022
+
+Active Directory is hosted through an application called Server Manager, which I must use on a Windows Server to properly set it up. 
 
 1. I first navigated to Microsoft's website after searching "Windows Server 2022 download." I filled out the short questionaire and then downloaded the 64-bit .iso file. 
 ![ActiveDirectory3](https://github.com/user-attachments/assets/3fee2084-ecb9-4bc7-ac9f-234eb5b24577)
@@ -75,6 +78,8 @@ I originally thought that Active Directory was setup on a regular PC, but that w
 ---
 ## Setting a Static IP Address
 
+Static IP addresses are crucial for AD domain controllers because it ensures consistent and reliable network communication, simplifies administration, and prevents potential disruptions when accessing domain resources. Because this is considered best practice in the professional IT world, I decided to practice setting a static IP address with my home lab. 
+
 1. First, to make sure that my VM would run on a static IP address, I went into VMware and then selected **VM,** **Settings,** and then **Network Adapter.** I then set my network connection to **Bridged: Connect directly to the physical network.**
 2. Because the bridged connection was not working, I had to troubleshoot it by going into **Edit** and then **Virtual Network Editor** to configure the **VMnet0** connection. After setting it to the proper Ethernet adapter (since my VM is connected to the internet via my host PC's ethernet cable), my bridged connection issues were resolved.
 3. After resolving the network issues, I opened **Powershell** on my host machine and used the *ipconfig /all* command, taking note of the IPv4 address, Subnet Mask, Default Gateway, and DNS Server(s) under the **Ethernet adapter Ethernet:** section.
@@ -102,6 +107,15 @@ I then clicked **Apply** and **OK.**
 ---
 ## Setting Up Active Directory Domain Services (AD DS)
 
+Active Directory Domain Services is the core component of Active Directory. It:
+
+- Authenticates and authorizes users and computers
+- Stores information about users, groups, computers, printers, and more
+- Controls who can log in, access files, or join the network
+- Enables use of Group Policy to enforce rules on devices
+
+In order to properly experiment and practice with Active Directory, installing and setting AD DS is a must.
+
 1. I first selected the **AD DS** tab on the left of **Server Manager.** I then clicked **Promote this server to a domain,** thus opening the configuration wizard.
 2. Next, at the **Deployment Configuration** tab, I selected **Add a new forest** and made the root domain name **Electricx.local**
 ![ActiveDirectory9](https://github.com/user-attachments/assets/5dfa2db5-7438-46e4-ac5f-c5fbc8d1c4fe)
@@ -120,3 +134,29 @@ I then clicked **Apply** and **OK.**
    (My username being changed to ELECTRICX (my domain)\Administrator (my previous username))
 ![ActiveDirectory13](https://github.com/user-attachments/assets/76edb267-1aa4-4b29-aa0b-d80f1061240a)
    (AD DS all setup)
+
+---
+## Create, Disable, and Delete User Accounts
+
+IT Professionals deal with user accounts on a daily basis. Therefore, knowing how to create, disable, and delete user accounts in Active Directory is crucial. 
+
+### Creating a User Account
+1. To create a user account, I first navigated to **Tools** and then **Active Directory Users and Computers.**
+2. Then, under the **Users** Organizational Unit (OU), I right-clicked and then selected **New** > **User.**
+3. I filled in the first and last name of the new user as well as their logon name.
+![ActiveDirectory14](https://github.com/user-attachments/assets/4f6d04a5-c880-4bed-8af2-a93934849d3b)
+   (Creating a new user)
+
+4. Next, I filled in the user's password and checked the **Password never expires** box. If I were creating a User for a real person at a company, I would instead choose the **User must change password at next logon** so that person can set their own password. I can always change this by double-clicking on the user and going to **Account.**
+![ActiveDirectory15](https://github.com/user-attachments/assets/bb4208c1-b126-4d98-bf81-11c376de9b5d)
+   (Successfully created user)
+
+### Disabling a User Account
+1. To disable a user account, I simply right-clicked the user and selected **Disable Account.** The icon of the user now has a down arrow next to it, indicating that it is disabled. This prevents the user from logging-in until the account is re=enabled.
+![ActiveDirectory16](https://github.com/user-attachments/assets/7eb28fba-e3e5-4867-b8c9-9854e9ee6e70)
+   (Disabled account pop-up)
+
+### Deleting a User Account
+1. To delete a user account, I simply right-clicked the user, selected **Delete,** and then confirmed the deletion. Deletions are permanent unless the **AD Recycle Bin** has been enabled.
+![ActiveDirectory17](https://github.com/user-attachments/assets/8800b8a3-74a6-4d97-9c86-128a68169149)
+   (Account no longer under the Users OU)
