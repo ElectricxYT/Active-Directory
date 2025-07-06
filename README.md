@@ -42,7 +42,7 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 
 ## Installing Windows Server 2022
 
-Active Directory is hosted through an application called Server Manager, which I must use on a Windows Server to properly set it up. 
+|-| Active Directory is hosted through an application called Server Manager, which I must use on a Windows Server to properly set it up. 
 
 1. I first navigated to Microsoft's website after searching "Windows Server 2022 download." I filled out the short questionaire and then downloaded the 64-bit .iso file. 
 ![ActiveDirectory3](https://github.com/user-attachments/assets/3fee2084-ecb9-4bc7-ac9f-234eb5b24577)
@@ -63,7 +63,7 @@ Active Directory is hosted through an application called Server Manager, which I
 ---
 ## Installing Server Manager
 
-I originally thought that Active Directory was setup on a regular PC, but that was wrong. As such, the screenshots below show me downloading Server Manager on my Windows 10 VM. Please keep in mind that I followed these same steps but with my Windows Server 2022. 
+|-| I originally thought that Active Directory was setup on a regular PC, but that was wrong. As such, the screenshots below show me downloading Server Manager on my Windows 10 VM. Please keep in mind that I followed these same steps but with my Windows Server 2022. 
 
 1. To install Server Manager, I first opened **Settings** and then **Optional Features**
 2. Then, I clicked **Add a Feature** and installed:
@@ -78,7 +78,7 @@ I originally thought that Active Directory was setup on a regular PC, but that w
 ---
 ## Setting a Static IP Address
 
-Static IP addresses are crucial for AD domain controllers because it ensures consistent and reliable network communication, simplifies administration, and prevents potential disruptions when accessing domain resources. Because this is considered best practice in the professional IT world, I decided to practice setting a static IP address with my home lab. 
+|-| Static IP addresses are crucial for AD domain controllers because it ensures consistent and reliable network communication, simplifies administration, and prevents potential disruptions when accessing domain resources. Because this is considered best practice in the professional IT world, I decided to practice setting a static IP address with my home lab. 
 
 1. First, to make sure that my VM would run on a static IP address, I went into VMware and then selected **VM,** **Settings,** and then **Network Adapter.** I then set my network connection to **Bridged: Connect directly to the physical network.**
 2. Because the bridged connection was not working, I had to troubleshoot it by going into **Edit** and then **Virtual Network Editor** to configure the **VMnet0** connection. After setting it to the proper Ethernet adapter (since my VM is connected to the internet via my host PC's ethernet cable), my bridged connection issues were resolved.
@@ -107,14 +107,14 @@ I then clicked **Apply** and **OK.**
 ---
 ## Setting Up Active Directory Domain Services (AD DS)
 
-Active Directory Domain Services is the core component of Active Directory. It:
+|-| Active Directory Domain Services is the core component of Active Directory. It:
 
 - Authenticates and authorizes users and computers
 - Stores information about users, groups, computers, printers, and more
 - Controls who can log in, access files, or join the network
 - Enables use of Group Policy to enforce rules on devices
 
-In order to properly experiment and practice with Active Directory, installing and setting AD DS is a must.
+|-| In order to properly experiment and practice with Active Directory, installing and setting AD DS is a must.
 
 1. I first selected the **AD DS** tab on the left of **Server Manager.** I then clicked **Promote this server to a domain,** thus opening the configuration wizard.
 2. Next, at the **Deployment Configuration** tab, I selected **Add a new forest** and made the root domain name **Electricx.local**
@@ -138,7 +138,7 @@ In order to properly experiment and practice with Active Directory, installing a
 ---
 ## Create, Disable, and Delete User Accounts
 
-IT Professionals deal with user accounts on a daily basis. Therefore, knowing how to create, disable, and delete user accounts in Active Directory is crucial. 
+|-| IT Professionals deal with user accounts on a daily basis. Therefore, knowing how to create, disable, and delete user accounts in Active Directory is crucial. 
 
 ### Creating a User Account
 1. To create a user account, I first navigated to **Tools** and then **Active Directory Users and Computers.**
