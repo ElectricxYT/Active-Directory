@@ -160,3 +160,42 @@ I then clicked **Apply** and **OK.**
 1. To delete a user account, I simply right-clicked the user, selected **Delete,** and then confirmed the deletion. Deletions are permanent unless the **AD Recycle Bin** has been enabled.
 ![ActiveDirectory17](https://github.com/user-attachments/assets/8800b8a3-74a6-4d97-9c86-128a68169149)
    (Account no longer under the Users OU)
+
+---
+## Create Security Groups and Add Users 
+
+|-| The purpose of security groups is to assign permissions to multiple users at once. This is a very useful skill for IT professionals because it saves time and makes user management more efficient. 
+
+1. In **Server Manager**, I first went to **Active Directory Users and Computers** and chose an OU to create my group in. For this task, I made an OU and called it **Service Accounts.**
+2. Then, I right-clicked and selected **New** and then **Group** in the OU pane. I gave the group the name **Service Users,** set the Group scope to **Global,** and set the Group type to **Security.** I then clicked **Okay.**
+![ActiveDirectory18](https://github.com/user-attachments/assets/8ff1e177-3d33-44dc-80b0-5cf7c491829d)
+   (Newly created Service Users Group)
+
+3. To add an user to the group, I first created a new user with the name **Kaden Williams.**
+4. Then, I clicked on the Service Users group and navigated to the **Members** tab. I then clicked **Add** and typed in the full name of the user I wanted to add to the group (or, in this case, Kaden Williams). I then clicked **Check Names** and the user's name became underlined.
+5. Finally, I clicked **OK** and then **Apply**
+![ActiveDirectory19](https://github.com/user-attachments/assets/2733c70b-da41-4686-af40-cdc27189e917)
+   (Kaden Williams user now a part of the group)
+
+---
+## Organizing with Organizational Units (OUs)
+
+|-| Organizational Units, or OUs, are like folders. They used to group users, computers, and groups. They also allow you to apply Group Policy Objects (GPOs) and delegate admin rights. I practiced organizing with Organizational Units in the last step when I created an OU called **Service Accounts.** To make an OU, follow these steps:
+
+1. Right click your domain name and select **New** and then **Organizational Unit.**
+2. Type in a name for the OU.
+3. Select **Protect from accidental deletion** if your OU is a critical structure (like HR, IT, etc), will have a GPO attached, is being delegated to someone else, or is part of your home lab (like mine). OUs with this setting enabled will have a special icon inside of the folder icon. If none of this applies and you could care less if the OU is deleted, then skip this step.
+4. Select **OK**
+
+|-| And just like that, you have a freshly-created Organizational Unit (OU)! It's important to note that OUs with **Protect from accidental deletion** enabled will be unable to be deleted unless that setting is disabled. To disbale it, follow these steps: 
+
+1. In ADUC, select **View** and then **Advanced Features**
+2. Then, right click the OU you want to delete and select **Properties**
+3. Navigate to the **Object tab** and uncheck **Protect object from accidental deletion.** Then click **Apply** and **OK.**
+4. Finally, right click the OU once more and select **Delete**
+![ActiveDirectory20](https://github.com/user-attachments/assets/b51f0e09-37ee-40b5-99b4-a1c35a4e7427)
+   (New OU called **Throwaway** unable to be deleted)
+![ActiveDirectory21](https://github.com/user-attachments/assets/ec2779e9-3a36-4883-b8fc-906ecde783b6)
+   (Throwaway OU now deleted)
+
+---
