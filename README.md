@@ -18,9 +18,9 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 - Verifying that DNS is working
 - Setting Up Active Directory Domain Services (AD DS)
 - Create, Disable, and Delete User Accounts
-- **⬇️ In Progress ⬇️**
 - Create Security Groups and Add Users 
 - Organizing with Organizational Units (OUs)
+- **⬇️ In Progress ⬇️**
 - Using Group Policy Objects (GPO)
 - Setting Permissions on Shared Folders
 - Resetting Passwords for Users
