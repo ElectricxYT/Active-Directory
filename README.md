@@ -199,3 +199,15 @@ I then clicked **Apply** and **OK.**
    (Throwaway OU now deleted)
 
 ---
+## Using Group Policy Objects (GPO)
+
+|-| Group Policy Objects (GPOs) allow you to control user and computer settings either throughout your entire domain or per OU. With GPOs, you can disable users' access to Control Panel, enforce password rules, map drives, or push software. This is very useful to IT professionals as it allows control of multiple users and computers at once. 
+
+1. First, I navigated to **Tools** then **Group Policy Management.**
+2. Next, I expanded my domain in the left pane until I could see my domain.local (Electricx.local) and the **Service Accounts** OU I created earlier.
+3. I then right clicked on the Service Accounts OU and selected **Create a GPO in this domain, and Link it here...**. I decided to name it **Block Control Panel,** the intended action of this GPO, and proceeded to click **OK.**
+![ActiveDirectory22](https://github.com/user-attachments/assets/81b6d7e4-097f-4e0f-b34f-7abc0cb9d431)
+   (Creating the Block Control Panel GPO)
+
+4. Then, I proceeded to right click the Block Control Panel GPO and selected **Edit,** as well as navaigated to **User Configuration, Policies, Administrative Templates,** and **Control Panel.**
+5. Finally, I double-clicked **Prohibit access to Control Panel and PC Settings,** set it to **Enabled,** and then selected **Apply** and then **OK** 
