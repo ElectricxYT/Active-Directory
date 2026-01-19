@@ -14,7 +14,7 @@ With this project, my goal to gain hands-on experience with all 10 of the above 
 
 - Installing Windows Server 2022
 - Installing Server Manager
-- Setting a Static IP Adress
+- Setting a Static IP Address
 - Verifying that DNS is working
 - Setting Up Active Directory Domain Services (AD DS)
 - Create, Disable, and Delete User Accounts
